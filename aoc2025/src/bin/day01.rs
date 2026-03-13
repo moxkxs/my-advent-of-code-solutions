@@ -15,6 +15,9 @@ fn main() {
 
         match i.chars().next() {
             Some('L') => {
+                if start_pos == 0 {
+                    zero_count -= 1;
+                }
                 start_pos += -1 * curr_move;
             },
             Some('R') => {
@@ -25,7 +28,7 @@ fn main() {
        
         if start_pos < 0 {
             zero_count += start_pos / (-100) + 1;
-        } else if start_pos > 100 {
+        } else if start_pos >= 100 {
             zero_count += start_pos / 100;
         } else if start_pos == 0 {
             zero_count += 1;
